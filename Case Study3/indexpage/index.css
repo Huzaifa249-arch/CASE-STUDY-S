@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body{
+    background-color: beige;
+    text-align: center;
+}
+.nav{
+    background-color: aquamarine;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav ul{
+    list-style: none;
+    display: flex;
+}
+.nav ul li a{
+    margin:25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+.welcome{
+    margin: 40px auto;
+}
+h1{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 18px;
+    color: brown;
+}
+.clinic-image img {
+    width: 100%;
+    height: 350px;          
+    background-size: cover;
+}
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 60px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 55px;
+    width: auto;
+    size: 0;
+}
