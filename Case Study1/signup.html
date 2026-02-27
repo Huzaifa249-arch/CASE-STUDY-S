@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HRPro - Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2><a href="index.html" style="color:#38bdf8;text-decoration:none">HRPro</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="employees.html">Employees</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="payroll.html">Payroll</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" id="loginBtn">Login</a></li>
+            <li><a href="signup.html" id="signupBtn">Signup</a></li>
+            <li><a href="#" id="logoutBtn" onclick="logout()" style="display:none">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <div class="card" style="max-width: 500px; margin: 50px auto;">
+            <h2>Create Account</h2>
+            <input type="text" id="sname" placeholder="Full Name" required>
+            <input type="email" id="semail" placeholder="Email Address" required>
+            <input type="password" id="spass" placeholder="Password" required>
+            <input type="password" id="scpass" placeholder="Confirm Password" required>
+            <select id="srole" required>
+                <option value="">Select Role</option>
+                <option value="Employee">Employee</option>
+                <option value="HR">HR Manager</option>
+                <option value="Admin">Administrator</option>
+            </select>
+            <input type="tel" id="sphone" placeholder="Contact Number" required>
+            <input type="text" id="sdepartment" placeholder="Department (Optional)">
+            <button onclick="signup()" class="btn-primary">Register Now</button>
+            <p id="smsg" class="message"></p>
+            <p style="text-align:center; margin-top:15px;">
+                Already have an account? <a href="login.html">Login here</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>HRPro Pvt Ltd | Mon–Fri 9AM–6PM</p>
+        <p>Email: hr@hrpro.com | Phone: +1 (555) 123-4567</p>
+        <p>© 2026 HRPro - All Rights Reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('login')) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

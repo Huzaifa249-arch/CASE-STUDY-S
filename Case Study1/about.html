@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HRPro - About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2><a href="index.html" style="color:#38bdf8;text-decoration:none">HRPro</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="employees.html">Employees</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="payroll.html">Payroll</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" id="loginBtn">Login</a></li>
+            <li><a href="signup.html" id="signupBtn">Signup</a></li>
+            <li><a href="#" id="logoutBtn" onclick="logout()" style="display:none">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <div class="card">
+            <h1>About HRPro</h1>
+            <p class="subtitle">Revolutionizing HR Management Since 2026</p>
+            
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>To simplify and streamline HR operations through innovative technology, making HR management efficient, transparent, and accessible for organizations of all sizes.</p>
+            </div>
+            
+            <div class="about-section">
+                <h2>Our Vision</h2>
+                <p>To become the leading HR management platform globally, transforming how organizations manage their most valuable asset - their people.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>📊 Employee Management</h3>
+                    <p>Comprehensive employee database with detailed profiles, documents, and history tracking.</p>
+                </div>
+                <div class="feature">
+                    <h3>⏱ Attendance Tracking</h3>
+                    <p>Real-time attendance monitoring with multiple check-in options and automated reports.</p>
+                </div>
+                <div class="feature">
+                    <h3>💰 Payroll Processing</h3>
+                    <p>Automated salary calculations, tax deductions, and salary slip generation.</p>
+                </div>
+                <div class="feature">
+                    <h3>📈 Analytics & Reports</h3>
+                    <p>Detailed analytics and custom reports for informed decision-making.</p>
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <h2>Our Values</h2>
+                <ul class="values-list">
+                    <li><strong>Innovation:</strong> Continuously improving our platform with cutting-edge features</li>
+                    <li><strong>Reliability:</strong> 99.9% uptime and secure data handling</li>
+                    <li><strong>Simplicity:</strong> User-friendly interface requiring minimal training</li>
+                    <li><strong>Support:</strong> 24/7 customer support and dedicated account managers</li>
+                </ul>
+            </div>
+            
+            <div class="team-section">
+                <h2>Meet Our Leadership</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <h4>John Smith</h4>
+                        <p>CEO & Founder</p>
+                    </div>
+                    <div class="team-member">
+                        <h4>Sarah Johnson</h4>
+                        <p>Head of Product</p>
+                    </div>
+                    <div class="team-member">
+                        <h4>Mike Chen</h4>
+                        <p>CTO</p>
+                    </div>
+                    <div class="team-member">
+                        <h4>Emily Davis</h4>
+                        <p>Head of Customer Success</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>HRPro Pvt Ltd | Mon–Fri 9AM–6PM</p>
+        <p>Email: hr@hrpro.com | Phone: +1 (555) 123-4567</p>
+        <p>© 2026 HRPro - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('login')) {
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('signupBtn').style.display = 'none';
+                document.getElementById('logoutBtn').style.display = 'inline';
+            }
+        });
+    </script>
+</body>
+</html>

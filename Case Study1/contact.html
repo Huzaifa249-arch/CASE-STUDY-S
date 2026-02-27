@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HRPro - Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2><a href="index.html" style="color:#38bdf8;text-decoration:none">HRPro</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="employees.html">Employees</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="payroll.html">Payroll</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" id="loginBtn">Login</a></li>
+            <li><a href="signup.html" id="signupBtn">Signup</a></li>
+            <li><a href="#" id="logoutBtn" onclick="logout()" style="display:none">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <div class="card">
+            <h1>Contact HR Support</h1>
+            <p class="subtitle">We're here to help! Get in touch with our HR team</p>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <input type="text" id="cname" placeholder="Your Name" required>
+                    <input type="email" id="cemail" placeholder="Your Email" required>
+                    <select id="csubject" required>
+                        <option value="">Select Subject</option>
+                        <option value="Employee Query">Employee Query</option>
+                        <option value="Payroll Issue">Payroll Issue</option>
+                        <option value="Attendance Problem">Attendance Problem</option>
+                        <option value="Technical Support">Technical Support</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Feedback">Feedback</option>
+                    </select>
+                    <textarea id="cmsg" placeholder="Your Message" rows="5" required></textarea>
+                    <button onclick="contact()" class="btn-primary">Send Message</button>
+                    <p id="cstatus" class="message"></p>
+                </div>
+                
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <div class="info-item">
+                        <h3>📍 Address</h3>
+                        <p>HRPro Headquarters<br>
+                        123 Business Street<br>
+                        Suite 500, Tech Park<br>
+                        New York, NY 10001</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>📞 Phone Numbers</h3>
+                        <p>General Inquiries: +1 (555) 123-4567<br>
+                        HR Support: +1 (555) 123-4568<br>
+                        Technical Support: +1 (555) 123-4569<br>
+                        Fax: +1 (555) 123-4570</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>✉️ Email Addresses</h3>
+                        <p>General: info@hrpro.com<br>
+                        HR Support: hr@hrpro.com<br>
+                        Sales: sales@hrpro.com<br>
+                        Support: support@hrpro.com</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>🕐 Working Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 2:00 PM<br>
+                        Sunday: Closed<br>
+                        Emergency Support: 24/7 Available</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>How do I reset my password?</h3>
+                    <p>Click on "Forgot Password" on the login page or contact support@hrpro.com for assistance.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I access HRPro on mobile?</h3>
+                    <p>Yes! HRPro is fully responsive and works on all mobile devices and tablets.</p>
+                </div>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HRPro - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <h2><a href="index.html" style="color:#38bdf8;text-decoration:none">HRPro</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="employees.html">Employees</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="payroll.html">Payroll</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" id="loginBtn">Login</a></li>
+            <li><a href="signup.html" id="signupBtn">Signup</a></li>
+            <li><a href="#" id="logoutBtn" onclick="logout()" style="display:none">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME CONTENT -->
+    <section class="main-content">
+        <div class="card">
+            <h2>Welcome to HRPro</h2>
+            <p>Your complete HR Management Solution</p>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Total Employees</h3>
+                    <p id="empCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Today's Attendance</h3>
+                    <p id="attCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Payroll Records</h3>
+                    <p id="payCount">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Quick Actions</h2>
+            <div class="quick-actions">
+                <a href="employees.html" class="action-btn">Add Employee</a>
+                <a href="attendance.html" class="action-btn">Mark Attendance</a>
+                <a href="payroll.html" class="action-btn">Process Payroll</a>
+                <a href="contact.html" class="action-btn">Contact Support</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Announcements</h2>
+            <ul class="announcements">
+                <li>🎯 New HR Policies effective from 1st April</li>
+                <li>📅 Quarterly reviews scheduled for next week</li>
+                <li>💰 Salary disbursement on 5th of every month</li>
+                <li>🎉 Employee of the Month: John Doe</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>HRPro Pvt Ltd | Mon–Fri 9AM–6PM</p>
+        <p>Email: hr@hrpro.gmail.com | Phone: +91 7869977578</p>
+        <p>© 2026 HRPro - All Rights Reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Load stats on home page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load employee count
+            let emps = JSON.parse(localStorage.getItem('emps') || '[]');
+            document.getElementById('empCount').textContent = emps.length;
+            
+            // Load attendance count for today
+            let today = new Date().toLocaleDateString();
+            let att = JSON.parse(localStorage.getItem('att') || '[]');
+            let todayAtt = att.filter(a => a.date === today);
+            document.getElementById('attCount').textContent = todayAtt.length;
+            
+            // Load payroll count
+            let pay = JSON.parse(localStorage.getItem('pay') || '[]');
+            document.getElementById('payCount').textContent = pay.length;
+            
+            // Check login status
+            if (localStorage.getItem('login')) {
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('signupBtn').style.display = 'none';
+                document.getElementById('logoutBtn').style.display = 'inline';
+            }
+        });
+    </script>
+</body>
+</html>

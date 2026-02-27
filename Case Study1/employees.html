@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HRPro - Employees</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2><a href="index.html" style="color:#38bdf8;text-decoration:none">HRPro</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="employees.html">Employees</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="payroll.html">Payroll</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" id="loginBtn">Login</a></li>
+            <li><a href="signup.html" id="signupBtn">Signup</a></li>
+            <li><a href="#" id="logoutBtn" onclick="logout()" style="display:none">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <div class="card">
+            <h2>Add New Employee</h2>
+            <div class="form-row">
+                <input type="text" id="ename" placeholder="Full Name" required>
+                <input type="text" id="eid" placeholder="Employee ID">
+            </div>
+            <div class="form-row">
+                <input type="text" id="edept" placeholder="Department" required>
+                <input type="text" id="erole" placeholder="Job Role" required>
+            </div>
+            <div class="form-row">
+                <input type="email" id="eemail" placeholder="Email Address" required>
+                <input type="tel" id="ephone" placeholder="Contact Number" required>
+            </div>
+            <div class="form-row">
+                <input type="date" id="ejdate" placeholder="Joining Date">
+                <select id="estatus">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="On Leave">On Leave</option>
+                </select>
+            </div>
+            <input type="text" id="eaddress" placeholder="Address">
+            <button onclick="addEmp()" class="btn-primary">Add Employee</button>
+        </div>
+
+        <div class="card">
+            <h2>Employee Directory</h2>
+            <div class="search-bar">
+                <input type="text" id="searchEmp" placeholder="Search by name, department or role..." 
+                       onkeyup="searchEmployees()">
+                <select id="filterDept" onchange="filterEmployees()">
+                    <option value="">All Departments</option>
+                    <option value="IT">IT</option>
+                    <option value="HR">HR</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Marketing">Marketing</option>
+                </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Role</th>
+                        <th>Contact</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="empTable">
+                    <!-- Employees will be loaded here -->
+                </tbody>
+            </table>
+            <p id="empCount">Total Employees: 0</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>HRPro Pvt Ltd | Mon–Fri 9AM–6PM</p>
+        <p>Email: hr@hrpro.com | Phone: +1 (555) 123-4567</p>
+        <p>© 2026 HRPro - All Rights Reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEmp();
+            if (localStorage.getItem('login')) {
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('signupBtn').style.display = 'none';
+                document.getElementById('logoutBtn').style.display = 'inline';
+            }
+        });
+    </script>
+</body>
+</html>

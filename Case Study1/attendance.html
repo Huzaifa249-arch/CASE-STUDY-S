@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HRPro - Attendance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2><a href="index.html" style="color:#38bdf8;text-decoration:none">HRPro</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="employees.html">Employees</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="payroll.html">Payroll</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" id="loginBtn">Login</a></li>
+            <li><a href="signup.html" id="signupBtn">Signup</a></li>
+            <li><a href="#" id="logoutBtn" onclick="logout()" style="display:none">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <div class="card">
+            <h2>Mark Attendance</h2>
+            <div class="form-row">
+                <input type="text" id="attName" placeholder="Employee Name" list="empNames">
+                <datalist id="empNames">
+                    <!-- Employee names will be populated by JavaScript -->
+                </datalist>
+                <select id="attStatus">
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="Late">Late</option>
+                    <option value="Half Day">Half Day</option>
+                    <option value="Leave">Leave</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <input type="date" id="attDate" value="">
+                <input type="time" id="attInTime" placeholder="In Time" value="09:00">
+                <input type="time" id="attOutTime" placeholder="Out Time" value="18:00">
+            </div>
+            <textarea id="attRemarks" placeholder="Remarks (Optional)" rows="2"></textarea>
+            <button onclick="markAttendance()" class="btn-primary">Submit Attendance</button>
+        </div>
+
+        <div class="card">
+            <h2>Attendance Records</h2>
+            <div class="filter-options">
+                <input type="date" id="filterDate" onchange="filterAttendance()">
+                <select id="filterStatus" onchange="filterAttendance()">
+                    <option value="">All Status</option>
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="Late">Late</option>
+                    <option value="Half Day">Half Day</option>
+                    <option value="Leave">Leave</option>
+                </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Employee</th>
+                        <th>Status</th>
+                        <th>In Time</th>
+                        <th>Out Time</th>
+                        <th>Remarks</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="attTable">
+                    <!-- Attendance records will be loaded here -->
+                </tbody>
+            </table>
+            <p id="todayCount">Today's Present: 0</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>HRPro Pvt Ltd | Mon–Fri 9AM–6PM</p>
+        <p>Email: hr@hrpro.com | Phone: +1 (555) 123-4567</p>
+        <p>© 2026 HRPro - All Rights Reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

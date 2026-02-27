@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HRPro - Payroll</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2><a href="index.html" style="color:#38bdf8;text-decoration:none">HRPro</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="employees.html">Employees</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="payroll.html">Payroll</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" id="loginBtn">Login</a></li>
+            <li><a href="signup.html" id="signupBtn">Signup</a></li>
+            <li><a href="#" id="logoutBtn" onclick="logout()" style="display:none">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <div class="card">
+            <h2>Generate Payroll</h2>
+            <div class="form-row">
+                <input type="text" id="pname" placeholder="Employee Name" list="payEmpNames">
+                <datalist id="payEmpNames">
+                    <!-- Employee names will be populated -->
+                </datalist>
+                <input type="month" id="ppaymonth" value="">
+            </div>
+            <div class="form-row">
+                <input type="number" id="pbasic" placeholder="Basic Salary" required>
+                <input type="number" id="phra" placeholder="HRA" value="0">
+            </div>
+            <div class="form-row">
+                <input type="number" id="pda" placeholder="DA" value="0">
+                <input type="number" id="pca" placeholder="Conveyance Allowance" value="0">
+            </div>
+            <div class="form-row">
+                <input type="number" id="ptax" placeholder="Income Tax" value="0">
+                <input type="number" id="ppf" placeholder="Provident Fund" value="0">
+            </div>
+            <div class="form-row">
+                <input type="number" id="potherallow" placeholder="Other Allowances" value="0">
+                <input type="number" id="potherded" placeholder="Other Deductions" value="0">
+            </div>
+            <button onclick="calcSalary()" class="btn-primary">Calculate Salary</button>
+            
+            <div class="salary-summary" id="salarySummary" style="display:none; margin-top:20px; padding:15px; background:#f0f9ff; border-radius:5px;">
+                <h3>Salary Breakdown</h3>
+                <div class="summary-row">
+                    <span>Basic Salary:</span>
+                    <span id="sumBasic">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Total Allowances:</span>
+                    <span id="sumAllow">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Total Deductions:</span>
+                    <span id="sumDed">₹0</span>
+                </div>
+                <div class="summary-row total">
+                    <strong>Net Salary:</strong>
+                    <strong id="sumNet">₹0</strong>
+                </div>
+                <button onclick="saveSalary()" class="btn-success" style="margin-top:10px;">Save Payroll</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Payroll History</h2>
+            <div class="filter-options">
+                <input type="month" id="filterMonth" onchange="filterPayroll()">
+                <input type="text" id="searchPayroll" placeholder="Search employee..." onkeyup="filterPayroll()">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Employee</th>
+                        <th>Basic</th>
+                        <th>Allowances</th>
+                        <th>Deductions</th>
+                        <th>Net Salary</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="payTable">
+                    <!-- Payroll records will be loaded here -->
+                </tbody>
+            </table>
+            <p id="totalSalary">Total Salary Paid: ₹0</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>HRPro Pvt Ltd | Mon–Fri 9AM–6PM</p>
+        <p>Email: hr@hrpro.com | Phone: +1 (555) 123-4567</p>
+        <p>© 2026 HRPro - All Rights Reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current month as default
+            const now = new Date();
+            const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+            document.getElementById('ppaymonth').value = currentMonth;
+            document.getElementById('filterMonth').value = currentMonth;
+            
+            loadPay();
+            populatePayEmpNames();
+            if (localStorage.getItem('login')) {
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('signupBtn').style.display = 'none';
+                document.getElementById('logoutBtn').style.display = 'inline';
+            }
+        });
+        
+        function populatePayEmpNames() {
+            let emps = JSON.parse(localStorage.getItem('emps') || '[]');
+            let datalist = document.getElementById('payEmpNames');
+            datalist.innerHTML = '';
+            emps.forEach(emp => {
+                let option = document.createElement('option');
+                option.value = emp.name;
+                datalist.appendChild(option);
+            });
+        }
+    </script>
+</body>
+</html>
