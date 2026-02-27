@@ -1,0 +1,86 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background: #e0f2fe;   /* light sky blue */
+}
+
+/* Navbar */
+nav {
+  background: #2563eb;   /* blue */
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* Page Container */
+.container {
+  padding: 140px;
+}
+
+/* Card Box */
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  border-radius: 16px;
+  border-left: 100px solid #22c55e;
+  justify-content: center; /* green line */
+}
+
+/* Grid for Books */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* Inputs */
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+}
+
+/* Buttons */
+button {
+  background: #22c55e;   /* green */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+/* Disabled Button */
+button:disabled {
+  background: #9ca3af;
+}
+
+/* Hide Elements */
+.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  background: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
