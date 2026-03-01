@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPLStats - About IPL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo">IPL</div>
+            <span class="site-name">IPLStats</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="teams.html">Teams</a>
+            <a href="players.html">Players</a>
+            <a href="matches.html">Matches</a>
+            <a href="points.html">Points Table</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="auth-buttons" id="authButtons">
+            <button class="login-btn" onclick="handleLogin()">Login</button>
+            <button class="signup-btn" onclick="handleSignup()">Signup</button>
+            <button class="logout-btn" onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>About Indian Premier League</h1>
+            <p>The biggest cricketing extravaganza in the world</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-section">
+                <h2>History</h2>
+                <p>The Indian Premier League (IPL) is a professional Twenty20 cricket league in India contested during March or April and May of every year by eight teams representing eight different cities in India. The league was founded by the Board of Control for Cricket in India (BCCI) in 2007 and has since become the most-attended cricket league in the world and ranked sixth among all sports leagues.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>First Season:</strong> 2008</p>
+                    <p><strong>Champions:</strong> Rajasthan Royals</p>
+                    <p><strong>Most Successful Team:</strong> Mumbai Indians (5 titles)</p>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Tournament Format</h2>
+                <p>The tournament format involves each team playing every other team twice in a round-robin format - once at home and once away. After the league stage:</p>
+                <ul>
+                    <li><strong>Top 4 teams</strong> qualify for the playoffs</li>
+                    <li><strong>Qualifier 1:</strong> 1st vs 2nd (winner goes to final)</li>
+                    <li><strong>Eliminator:</strong> 3rd vs 4th (loser eliminated)</li>
+                    <li><strong>Qualifier 2:</strong> Loser of Qualifier 1 vs Winner of Eliminator</li>
+                    <li><strong>Final:</strong> Winner of Qualifier 1 vs Winner of Qualifier 2</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2>Rules & Regulations</h2>
+                <ul>
+                    <li><strong>Team Composition:</strong> Each team can have a maximum of 25 players, with at least 16 Indian players</li>
+                    <li><strong>Playing XI:</strong> Maximum 4 overseas players in the playing eleven</li>
+                    <li><strong>Super Over:</strong> In case of a tie in playoffs or final, a Super Over determines the winner</li>
+                    <li><strong>Strategic Time-out:</strong> Two 2.5-minute strategic time-outs per innings (between overs 6-9 and 13-16)</li>
+                    <li><strong>DRS:</strong> Decision Review System available with one unsuccessful review per innings</li>
+                    <li><strong>Impact Player:</strong> Teams can substitute one player during the match</li>
+                    <li><strong>Salary Cap:</strong> Each team has a salary cap of INR 95 crore for player contracts</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2>Awards & Recognition</h2>
+                <ul>
+                    <li><strong>Orange Cap:</strong> Awarded to the highest run-scorer of the season</li>
+                    <li><strong>Purple Cap:</strong> Awarded to the highest wicket-taker of the season</li>
+                    <li><strong>Most Valuable Player:</strong> Best performer of the season based on overall contribution</li>
+                    <li><strong>Fairplay Award:</strong> Team with the best conduct on the field</li>
+                    <li><strong>Emerging Player:</strong> Best young player (under 25) of the season</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About IPLStats</h3>
+                <p>Your comprehensive platform for IPL team management, player statistics, match schedules, and points table.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="https://www.iplt20.com" target="_blank">Official IPL Website</a></p>
+                <p><a href="mailto:info@iplstats.com">info@iplstats.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <span>📘</span>
+                    <span>🐦</span>
+                    <span>📷</span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 IPLStats. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

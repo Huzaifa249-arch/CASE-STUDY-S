@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPLStats - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo">IPL</div>
+            <span class="site-name">IPLStats</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="teams.html">Teams</a>
+            <a href="players.html">Players</a>
+            <a href="matches.html">Matches</a>
+            <a href="points.html">Points Table</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="auth-buttons" id="authButtons">
+            <button class="login-btn" onclick="handleLogin()">Login</button>
+            <button class="signup-btn" onclick="handleSignup()">Signup</button>
+            <button class="logout-btn" onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="hero">
+            <h1>Welcome to IPLStats</h1>
+            <p>Your complete Indian Premier League management solution - Track teams, players, matches, and more!</p>
+        </div>
+        
+        <div class="news-section">
+            <h2 class="section-title">Latest IPL News</h2>
+            <div class="news-grid" id="newsGrid"></div>
+        </div>
+
+        <div class="featured-section">
+            <h2 class="section-title">Featured Teams</h2>
+            <div class="teams-grid" id="featuredTeams"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About IPLStats</h3>
+                <p>Your comprehensive platform for IPL team management, player statistics, match schedules, and points table.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="https://www.iplt20.com" target="_blank">Official IPL Website</a></p>
+                <p><a href="mailto:info@iplstats.com">info@iplstats.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <span>📘</span>
+                    <span>🐦</span>
+                    <span>📷</span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 IPLStats. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
