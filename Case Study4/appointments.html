@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HealthCare Clinic - Appointments</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">🏥 HealthCare Clinic</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="appointments.html">Appointments</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="loginLink"><a href="login.html">Login</a></li>
+        <li id="signupLink"><a href="signup.html">Signup</a></li>
+        <li id="logoutLink" style="display:none;"><a href="#">Logout</a></li>
+    </ul>
+</nav>
+<section class="section">
+    <h2>Book Appointment</h2>
+
+    <form id="appointmentForm" class="form">
+        <input type="text" id="patientName" placeholder="Patient Name" required>
+        
+        <select id="doctorSelect" required>
+            <option value="">Select Doctor</option>
+        </select>
+
+        <input type="datetime-local" id="dateTime" required>
+
+        <textarea id="reason" placeholder="Reason / Notes" required></textarea>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+</section>
+<section class="section">
+    <h2>My Appointments</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Doctor</th>
+                <th>Date & Time</th>
+                <th>Reason</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="appointmentTable">
+        </tbody>
+    </table>
+</section>
+<footer>
+    <p>📍 Nellore, Andhra Pradesh</p>
+    <p>🕒 Mon - Sat | 9:00 AM - 6:00 PM</p>
+    <p>📧 support@healthcare.com | 📞 +91 9876543210</p>
+    <p>© 2026 HealthCare Clinic</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0077b6;
+  padding: 15px 40px;
+}
+
+.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* BANNER */
+.banner {
+  background: #90e0ef;
+  padding: 80px;
+  text-align: center;
+}
+
+.banner h1 {
+  font-size: 36px;
+}
+
+.section {
+  padding: 40px;
+  text-align: center;
+}
+
+.card-container {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+/* FORMS */
+.form {
+  width: 350px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select, textarea {
+  padding: 10px;
+}
+
+button {
+  background: #0077b6;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #023e8a;
+}
+
+/* TABLE */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #023e8a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
